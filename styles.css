@@ -1,0 +1,101 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif; 
+}
+
+.navigationBar {
+    background: cadetblue;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navigationBar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+#navigationBar__logo {
+    background-image: linear-gradient(to top, chartreuse 0%, yellow 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.fa-gem {
+    margin-right: 8px;
+}
+
+.navigationBar__menu {
+     display: flex;
+     align-items: center;
+     list-style: none;
+     text-align: center;
+}
+.navigationBar__item {
+    height :80px;
+}
+
+.navigationBar__links {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 16px;
+    height: 100%;
+}
+
+.navigationBar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+    width:100%
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 20px;
+    height: 100%;
+    max-height: 40px;
+    width: 100%;
+    min-width: 90px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: chartreuse;
+    color: black;
+}
+
+.button:hover {
+    background: orange;
+    transition: all 0.3s ease;
+}
+
+.navigationBar__links:hover {
+    color: green;
+    transition: all 0.3s ease;
+}
