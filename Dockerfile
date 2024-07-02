@@ -15,7 +15,7 @@ COPY .. .
 # Install dependencies
 RUN npm install
 
-# Expose the port your app runs on
+# Expose the port the app runs on
 EXPOSE 3000
 
 # Command to run your app using Node.js
