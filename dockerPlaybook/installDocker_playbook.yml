@@ -1,0 +1,51 @@
+---
+- name: Docker installation on Debian Bookworm host
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
+
+    - name: Install dependencies for Docker
+      apt:
+        name:
+          - ca-certificates
+          - curl
+          - gnupg
+        state: present
+
+    - name: Check if Docker GPG key exists
+      command: apt-key finger
+      register: existing_gpg_key
+      changed_when: false
+      failed_when: false
+
+    - name: Add GPG key for Docker to apt if it doesn't already exist
+      apt_key:
+        url: https://download.docker.com/linux/debian/gpg
+        state: present
+      when: '"Docker Release" not in existing_gpg_key.stdout'
+
+    - name: Add official Docker repo to apt
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/debian bookworm stable
+
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: 
+          - docker-ce 
+          - docker-ce-cli
+          - containerd.io
+        state: present
+
+    - name: Check to see if Docker is started and enabled 
+      service:
+        name: docker
+        state: started
+        enabled: yes

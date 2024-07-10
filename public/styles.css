@@ -30,6 +30,7 @@
 #navigationBar__logo {
     background-image: linear-gradient(to top, chartreuse 0%, yellow 100%);
     background-size: 100%;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
