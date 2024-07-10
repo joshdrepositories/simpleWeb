@@ -1,16 +1,13 @@
 {
   "name": "simpleweb",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "me",
   "dependencies": {
     "express": "^4.19.2"
   },
-  "description": ""
+  "description": "simple web server"
 }

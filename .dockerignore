@@ -1,2 +1,5 @@
+#Tell docker to not include the following when building the container:
 .git*
 README.md
+.vagrant
+.vscode

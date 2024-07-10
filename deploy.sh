@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#define variables for use in the script
+#define variables for use in the script (change to suit your own needs)
 IMAGE_NAME="simpleweb-web"
-VPS_IP="192.168.122.44"
-VPS_USERNAME="vps"
+VPS_IP=""
+VPS_USERNAME=""
 SSH_PRIVATE_KEY_PATH="~/.ssh/id_rsa"
 
 #build the docker image using docker compose
