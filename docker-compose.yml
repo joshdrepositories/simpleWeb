@@ -1,8 +1,6 @@
 services:
   web: # Defines a service named 'web'.
-    build:    
-      context: . # The build context for the Docker image. '.' means the current directory
-      dockerfile: Dockerfile
+  image: simpleweb-web:latest
 
     command: npm run start # Overrides the default command specified in the Dockerfile.
 
