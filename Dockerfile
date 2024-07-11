@@ -5,12 +5,12 @@ FROM node:18
 WORKDIR /src
 
 # Copy required project files to the container
-COPY ../package*.json ./
+COPY ./package*.json ./
 
-COPY ../src ./src
-COPY ../public ./public
+COPY ./src ./src
+COPY ./public ./public
 
-COPY .. .
+#COPY . .
 
 # Install  Node.js dependencies
 RUN npm install
