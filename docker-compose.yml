@@ -1,5 +1,5 @@
 services:
   web: # Defines a service named 'web'.
-    image: simpleweb-web:latest
+    image: ${IMAGE_NAME}:latest
     ports:
       - "3000:3000" # Maps port 3000 on your host machine to port 3000 in the Docker container.
