@@ -1,6 +1,7 @@
 ---
 - name: Docker installation on Debian Bookworm host
-  hosts: localhost
+  #hosts: localhost
+  hosts: all
   become: yes
 
   tasks:
@@ -44,8 +45,37 @@
           - containerd.io
         state: present
 
+    # Create docker group so user can be added to it
+    - name: Create docker group
+      group:
+        name: docker
+        state: present
+
+    # add user to docker group
+    - name: Add current user to docker group
+      user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: yes
+          
     - name: Check to see if Docker is started and enabled 
       service:
         name: docker
         state: started
         enabled: yes
+
+    # everything below was added
+    - name: Reset ssh connection to allow user changes to affect ansible user
+      meta: reset_connection
+
+    - name: Enable docker.service
+      systemd:
+        name: docker.service
+        daemon_reload: true
+        enabled: true
+ 
+    - name: Enable containerd.service
+      systemd:
+        name: containerd.service
+        daemon_reload: true
+        enabled: true

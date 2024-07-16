@@ -1,10 +1,5 @@
 services:
   web: # Defines a service named 'web'.
-    build:    
-      context: . # The build context for the Docker image. '.' means the current directory
-      dockerfile: Dockerfile
-
-    command: npm run start # Overrides the default command specified in the Dockerfile.
-
+    image: ${IMAGE_NAME}:latest
     ports:
       - "3000:3000" # Maps port 3000 on your host machine to port 3000 in the Docker container.

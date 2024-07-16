@@ -2,15 +2,13 @@
 FROM node:18
 
 # Set the working directory
-WORKDIR /src
+WORKDIR /app
 
 # Copy required project files to the container
-COPY ../package*.json ./
-
-COPY ../src ./src
-COPY ../public ./public
-
-COPY .. .
+COPY ./package*.json ./
+COPY ./src ./src
+COPY ./public ./public
+#COPY . .
 
 # Install  Node.js dependencies
 RUN npm install
